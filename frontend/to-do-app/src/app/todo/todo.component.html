@@ -1,0 +1,13 @@
+<div>
+    <h1>ToDo List</h1>
+    <form (submit)="addTodo(newTodoDescription)">
+      <input [(ngModel)]="newTodoDescription" placeholder="Add new todo" name="newTodoDescription"/>
+      <button type="submit">Add</button>
+    </form>
+    <ul>
+      <li *ngFor="let todo of todos">
+        {{ todo.description }}
+        <button (click)="deleteTodo(todo.id)">Delete</button>
+      </li>
+    </ul>
+  </div>
